@@ -72,7 +72,7 @@ def boot_reg(request):
 
 def boot_list(request):
     ''' bootstrap template'''
-    return render(request, 'pybo/list.html')
+    return render(request, 'pybo/board_list.html')
 
 
 
