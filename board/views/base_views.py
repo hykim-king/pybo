@@ -28,13 +28,13 @@ def index(request):
 
     board_list = Board.objects.order_by('-create_date')  # order_by('-필드') desc, asc order_by('필드')
 
-    if '10' == div:
+    if '10' == div:   #제목
         logging.info('if 10')
         board_list = board_list.filter(subject__contains=kw)
-    elif '20' == div:
+    elif '20' == div: #내용
         logging.info('elif 20')
         board_list = board_list.filter(content__contains=kw)
-    elif '30' == div:
+    elif '30' == div: #등록자
         logging.info('elif 30')
         board_list = board_list.filter(author__username__contains=kw)
 
