@@ -8,7 +8,7 @@ STATIC_ROOT = BASE_DIR / 'static/'
 STATICFILES_DIRS = []
 
 env = environ.Env()
-environ.Env.read_env(BASE_DIR / '.evn')
+environ.Env.read_env(BASE_DIR / '.env')
 
 DATABASES = {
     'default': {
