@@ -93,10 +93,10 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
 		'ENGINE': 'django.db.backends.mysql',
-		'NAME': 'pcwk_db',
-		'USER': 'pcwk',
-		'PASSWORD': 'a4321',
-		'HOST': 'ls-0246c5d81c592c9318a23d3218886e0a57cf0eb8.ctsvch8dd7p5.ap-northeast-2.rds.amazonaws.com',
+		'NAME': 'aproject_db',
+		'USER': 'root',
+		'PASSWORD': '4321',
+		'HOST': 'localhost',
 		'PORT': '3306',
     }
 }

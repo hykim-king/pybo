@@ -3,6 +3,7 @@
 
 ### Django ###
 db.sqbpro
+*.env
 *.log
 *.pot
 *.pyc
