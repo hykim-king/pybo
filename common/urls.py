@@ -8,7 +8,8 @@ since 2023.01.09 Copyright (C) by KandJang All right reserved.
 from django.urls import path
 from django.contrib.auth import views as auth_views
 from . import views
-
+from django.conf.urls.static import static
+from django.conf import settings
 app_name='common'
 
 urlpatterns = [
@@ -20,4 +21,21 @@ urlpatterns = [
 
    # signup: 회원가입
    path('signup/', views.signup, name='signup'),
-]
+
+   # email
+   path('sendmail/', views.sendmail, name='sendmail'),
+
+   # email:첨부파일
+   path('sendmail_attach/', views.sendmail_attach, name='sendmail_attach'),
+
+   # email:첨부파일
+   path('sendmail_param/', views.sendmail_param, name='sendmail_param'),
+
+   # fileupload
+   path("upload/", views.upload, name="upload"),
+
+   # fileupload
+   path("download/", views.download, name="download"),
+
+   #https://ordinarycoders.com/blog/article/django-file-image-uploads
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,37 @@
+    {% extends 'base.html' %}
+    {% block content %}
+    <!-- container-->
+    <div class="container">
+        <!-- 제목 -->
+        <div class="text-start mb-5">
+            <h2 class="border-bottom py-2">파일업로드</h2>
+        </div>
+        <!-- 제목 end-->
+
+        <!-- button -->
+        <div class="d-grid gap-2 mb-1 d-md-flex justify-content-end">
+        </div>
+        <!-- button end -->
+
+        <!-- 등록 form -->
+          <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+                <input type="file" name="upload" accept=".doc, .docx, .pdf, .txt">
+                <br>
+                <button class="btn btn-dark my-4" type="submit">Submit</button>
+          </form>
+        <!-- 등록 form end -->
+          <!--See File Uploaded-->
+          <h2 class="my-4">업로드 파일</h2>
+          <div class="row">
+            {% if file_url %}
+            <div class="col-lg-4 col-md-6 col-sm-12 pb-4">
+              <p>Uploaded to:<a href="{% url 'common:download' %}?file_name={{ file_url }}">{{ file_url }}</a></p>
+              <a class="btn btn-dark my-4" href="/">Return to Homepage</a>
+            {% else %}
+            <p>No file added.</p>
+            {% endif %}
+          </div>
+    </div>
+    <!-- container end-->
+    {% endblock %}

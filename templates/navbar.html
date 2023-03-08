@@ -17,6 +17,12 @@
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="{% url 'pybo:crawling_cgv' %}">무비차트</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'common:sendmail_param' %}">폼메일</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'common:upload' %}">파일</a>
+                </li>
                 <!-- 회원가입 -->
                 <li class="nav-item" >
                     {% if not user.is_authenticated %}
